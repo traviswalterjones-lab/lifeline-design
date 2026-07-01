@@ -44,7 +44,7 @@ export default function Hero() {
       const cols = isMobile ? 4 : 11;
       const tile = w / cols;
       const solidRows = Math.ceil(vh / tile) + 1; // cover the viewport + header
-      const checkerRows = 4; // dappled trailing edge
+      const checkerRows = isMobile ? 5 : 4; // dappled trailing edge (mobile a touch deeper)
       const rows = solidRows + checkerRows;
 
       const cells = [];

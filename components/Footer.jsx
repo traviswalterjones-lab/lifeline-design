@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="foot-brand">
             <div className="fname">John Donnelly</div>
             <p>
-              Author of <em>Lifeline: The Story of PEPFAR, The Greatest
+              Author of <em>Lifeline: The Story of PEPFAR, the Greatest
               Humanitarian Initiative of Our Time</em> (HarperCollins, October 2026).
             </p>
             {/* eslint-disable-next-line @next/next/no-img-element */}
