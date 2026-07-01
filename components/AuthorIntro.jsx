@@ -20,6 +20,7 @@ export default function AuthorIntro() {
         duration: 0.9,
         stagger: 0.1,
         ease: "power3.out",
+        clearProps: "opacity,transform",
         scrollTrigger: { trigger: ref.current, start: "top 80%", once: true },
       });
 
@@ -47,8 +48,12 @@ export default function AuthorIntro() {
       <div className="wrap ai-inner">
         <figure className="ai-photo ai-r">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/tiles/t5.jpg" alt="John Donnelly's reporting from the field" />
-          <figcaption className="cap">From the field · The Boston Globe</figcaption>
+          <img
+            src="/assets/author/author-field-crop.png"
+            width="990"
+            height="812"
+            alt="John Donnelly"
+          />
         </figure>
 
         <div className="ai-body">
@@ -64,11 +69,10 @@ export default function AuthorIntro() {
             more than a decade he chronicled the politics of AIDS and the people —
             American and African — who raced to turn the tide.
           </p>
-          <div className="ai-tags ai-r">
-            <span>Global health</span>
-            <span>PEPFAR</span>
-            <span>The Boston Globe</span>
-            <span>Foreign correspondent</span>
+          <div className="ai-cta ai-r">
+            <a className="btn btn-ghost btn-md" href="#author">
+              More about John
+            </a>
           </div>
         </div>
       </div>
