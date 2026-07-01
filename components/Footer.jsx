@@ -1,5 +1,3 @@
-import { HARPER_URL } from "@/lib/content";
-
 export default function Footer() {
   return (
     <footer className="site-footer" data-hide-brand>
@@ -27,16 +25,6 @@ export default function Footer() {
               <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-
-          <div className="foot-col">
-            <h4>The book</h4>
-            <ul>
-              <li><a href={HARPER_URL} target="_blank" rel="noopener">Pre-order</a></li>
-              <li><a href="/#buy">Hardcover</a></li>
-              <li><a href="/#buy">E-book</a></li>
-              <li><a href="/#buy">Audiobook</a></li>
             </ul>
           </div>
 

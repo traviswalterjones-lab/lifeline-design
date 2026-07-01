@@ -7,8 +7,7 @@ export default function FinalCTA() {
   return (
     <section className="section finalcta" id="buy">
       <Reveal className="wrap" selector=".r" stagger={0.12} y={28}>
-        <div className="eyebrow r">{ON_SALE} · Pre-order now</div>
-        <h2 className="r">Pre-order the book</h2>
+        <h2 className="r">{ON_SALE}</h2>
         <div className="row r">
           <a
             className="btn finalcta-btn btn-lg"
@@ -26,7 +25,6 @@ export default function FinalCTA() {
             </a>
           ))}
         </div>
-        <div className="ed-date r">{ON_SALE}</div>
       </Reveal>
     </section>
   );

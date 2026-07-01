@@ -21,7 +21,7 @@ export const metadata = {
   title: "John Donnelly — Lifeline",
   description:
     "Lifeline: The Story of PEPFAR, the Greatest Humanitarian Initiative of Our Time — the new book from journalist John Donnelly. HarperCollins, October 2026.",
-  icons: { icon: "/icon.svg" },
+  icons: { icon: "/favicon.png" },
   openGraph: {
     title: "John Donnelly — Lifeline",
     description:

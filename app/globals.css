@@ -591,7 +591,7 @@ h3 {
   position: relative;
   overflow: hidden;
   border-radius: 0;
-  aspect-ratio: 6 / 5; /* close to the source 990x812 so it isn't cropped tight */
+  aspect-ratio: 1 / 1; /* match the square documentary video tiles above */
   max-width: 500px;
   justify-self: center;
   box-shadow: 0 18px 50px rgba(20, 12, 40, 0.16);
@@ -778,7 +778,7 @@ h3 {
 }
 .foot-top {
   display: grid;
-  grid-template-columns: 1.7fr 1fr 1fr 1fr;
+  grid-template-columns: 1.7fr 1fr 1fr;
   gap: 40px;
   padding: 84px 0 56px;
 }

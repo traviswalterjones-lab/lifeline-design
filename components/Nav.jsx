@@ -65,9 +65,11 @@ export default function Nav({ variant = "purple" }) {
         <a href="/about" onClick={() => setOpen(false)}>About</a>
         <a href="/contact" onClick={() => setOpen(false)}>Contact</a>
         <a
-          href="/#buy"
+          href={HARPER_URL}
+          target="_blank"
+          rel="noopener"
           onClick={() => setOpen(false)}
-          style={{ color: "var(--lent-4)" }}
+          style={{ color: "var(--nav-violet)" }}
         >
           Pre-order →
         </a>
