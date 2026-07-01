@@ -887,6 +887,112 @@ h3 {
 }
 
 /* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.about-head {
+  padding-block: clamp(64px, 11vh, 130px) 40px;
+}
+.about-head .eyebrow {
+  opacity: 0.6;
+}
+.about-h1 {
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 340;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 16px 0 0;
+}
+.about-intro {
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 330;
+  line-height: 1.5;
+  color: #1a1a1a;
+  max-width: 62ch;
+  margin: 34px 0 0;
+}
+.about-intro em,
+.about-body em,
+.ag-value em {
+  font-style: italic;
+}
+.about-figure {
+  display: block;
+  margin: 12px auto 0;
+}
+.about-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1781 / 838;
+  object-fit: cover;
+  display: block;
+}
+.about-cap {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.55;
+  margin-top: 16px;
+}
+.about-details {
+  padding-block: clamp(56px, 8vh, 100px);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.42fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.ag-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.ag-item {
+  padding: 18px 0;
+  border-top: 1px solid var(--hairline);
+}
+.ag-item:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+.ag-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.5;
+}
+.ag-value {
+  font-size: 16px;
+  font-weight: 340;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+.about-body p {
+  font-size: 18px;
+  font-weight: 330;
+  line-height: 1.65;
+  color: #1a1a1a;
+  max-width: 60ch;
+}
+.about-body p + p {
+  margin-top: 24px;
+}
+@media (max-width: 860px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* ============================================================
    reveal baseline
    GSAP hides + animates these pre-paint (useGSAP layout effect).
    Left visible by default so content is never lost without JS.
