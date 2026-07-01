@@ -64,7 +64,7 @@ export default function AuthorIntro() {
             deadly pandemic. That reporting led to <em>Lifeline</em>.
           </h2>
           <div className="ai-cta ai-r">
-            <a className="btn btn-ghost btn-md" href="#author">
+            <a className="btn btn-ghost btn-md" href="/about">
               More about John
             </a>
           </div>
