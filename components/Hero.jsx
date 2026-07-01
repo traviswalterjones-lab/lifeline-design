@@ -2,10 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { HARPER_URL, RETAILERS, ON_SALE } from "@/lib/content";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+// How much scroll (in viewport heights) the curtain takes to fully lift.
+const REVEAL_VH = 0.8;
 
 const BOOK = "/assets/promo%20hero/book-3d.png";
 const HARPER = "/assets/promo%20hero/harper-logo.png";
@@ -53,12 +57,14 @@ export default function Hero() {
       }
 
       const gridH = rows * tile + (rows - 1) * 2;
-      // Stage stays pinned for (sectionHeight - vh) of scroll. Need that >= gridH
-      // so the grid fully clears while the hero is still pinned, then a short hold.
+      // The curtain lift is scrubbed over REVEAL_VH of scroll (see useGSAP),
+      // so the section only needs: reveal distance + a short hold + the pinned
+      // viewport. Stage un-pins at (height - vh); keep that past the reveal.
       setGrid({
         template: `repeat(${cols}, 1fr)`,
         cells,
-        height: `${gridH + vh * 1.35}px`,
+        gridH,
+        height: `${vh * (1 + REVEAL_VH + 0.3)}px`,
       });
     };
 
@@ -77,13 +83,32 @@ export default function Hero() {
 
   useGSAP(
     () => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const book = stageRef.current?.querySelector(".ph-cover");
-      if (book) {
+      if (book && !reduce) {
         gsap.to(book, { y: -10, duration: 3.6, ease: "sine.inOut", yoyo: true, repeat: -1 });
       }
+
+      // Lift the clipping grid faster than the page scrolls: it naturally rises
+      // 1:1 with scroll; this adds the remaining travel so the whole grid clears
+      // in REVEAL_VH of scroll instead of its full height.
+      const gridEl = sectionRef.current?.querySelector(".ir-grid");
+      if (gridEl && grid.gridH) {
+        const reveal = window.innerHeight * REVEAL_VH;
+        gsap.to(gridEl, {
+          y: -Math.max(0, grid.gridH - reveal),
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "+=" + reveal,
+            scrub: 0.3,
+            invalidateOnRefresh: true,
+          },
+        });
+      }
     },
-    { scope: sectionRef }
+    { scope: sectionRef, dependencies: [grid] }
   );
 
   return (
