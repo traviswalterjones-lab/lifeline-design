@@ -304,19 +304,38 @@ body.menu-open .fixed-brand {
   z-index: 200;
   background: #000;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  /* place LIFELINE at the bottom-center, exactly where the fixed brand pins,
+     so the handoff when the splash fades is seamless */
+  padding-bottom: 22px;
   transition: opacity 0.55s ease;
 }
 .splash-name {
   color: #fff;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  font-size: clamp(22px, 4vw, 34px);
+  letter-spacing: 0.04em;
+  font-size: 28px;
 }
 .splash.gone {
   opacity: 0;
   pointer-events: none;
+}
+@media (max-width: 760px) {
+  .splash {
+    padding-bottom: 18px;
+  }
+  .splash-name {
+    font-size: 22px;
+  }
+}
+@media (max-width: 420px) {
+  .splash {
+    padding-bottom: 14px;
+  }
+  .splash-name {
+    font-size: 18px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .splash {
