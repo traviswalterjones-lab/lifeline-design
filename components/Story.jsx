@@ -10,7 +10,7 @@ export default function Story() {
           <div className="eyebrow r">HarperCollins · Nonfiction</div>
           <h1 className="r">
             An inspiring account of how the US government built a start-up called
-            PEPFAR to fight AIDS — and saved more than 26 million lives.
+            PEPFAR to fight AIDS—and saved more than 26 million lives.
           </h1>
           <p className="r">
             In the early 2000s, rich governments did little to fight a raging AIDS
@@ -18,8 +18,8 @@ export default function Story() {
             annually. Several militaries reported HIV infection rates above twenty-five
             percent. Nearly four in ten pregnant women in some countries were
             infected. But in 2003, to the surprise of the world, President George W.
-            Bush created PEPFAR, the President&rsquo;s Emergency Plan for AIDS Relief —
-            which became his signature legacy for doing good.
+            Bush created PEPFAR, the President&rsquo;s Emergency Plan for AIDS
+            Relief—which became his signature legacy for doing good.
           </p>
           <p className="r">
             Nearly a quarter-century later, the initiative is seen as impactful as
