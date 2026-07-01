@@ -160,6 +160,7 @@ export default function FixedBrand() {
           const cy = Math.round(brandRect.top + brandRect.height / 2);
           const samples = 7;
           const sampleResults = [];
+          const sampleColors = [];
 
           const isCurtainNode = (node) => {
             if (!node) return false;
@@ -170,6 +171,7 @@ export default function FixedBrand() {
             const px = Math.round(brandRect.left + (brandRect.width * (index + 0.5)) / samples);
             const el = document.elementFromPoint(px, cy);
             const color = getSampleColor(el, px, cy, ctx);
+            if (color) sampleColors.push(color);
             const type = getSampleType(color);
             sampleResults.push(isCurtainNode(el) ? 'curtain' : type);
           }
@@ -179,14 +181,17 @@ export default function FixedBrand() {
           const darkCount = sampleResults.filter((type) => type === 'dark').length;
           const midCount = sampleResults.filter((type) => type === 'mid').length;
           const purpleCount = sampleResults.filter((type) => type === 'purple').length;
-          const darkMajority = darkCount >= 5 || (darkCount >= 4 && midCount <= 1 && lightCount === 0) || (darkCount >= 3 && purpleCount === 0 && midCount <= 1);
+          const avgLuminance = sampleColors.length
+            ? sampleColors.reduce((sum, [r, g, b]) => sum + luminance(r, g, b), 0) / sampleColors.length
+            : 255;
+          const darkAggressive = darkCount >= 3 || avgLuminance < 160;
 
-          if (curtainCount > 0) {
+          if (curtainCount > 0 || purpleCount > 0) {
             setPartial(false);
             setClipPercent(0);
             setXray(false);
             setBrandColor('#000');
-          } else if (darkMajority) {
+          } else if (darkAggressive) {
             setPartial(false);
             setClipPercent(0);
             setXray(true);

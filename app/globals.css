@@ -552,6 +552,12 @@ h3 {
   object-position: center top;
   display: block;
 }
+/* on mobile, show much more of the page (near its full 3:4 portrait) */
+@media (max-width: 760px) {
+  .lives-lost {
+    aspect-ratio: 3 / 4;
+  }
+}
 
 /* ============================================================
    VIDEO WALL — full-bleed row of documentary footage
