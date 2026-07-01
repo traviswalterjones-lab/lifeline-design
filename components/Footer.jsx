@@ -24,9 +24,9 @@ export default function Footer() {
           <div className="foot-col">
             <h4>Explore</h4>
             <ul>
-              <li><a href="#top">Home</a></li>
-              <li><a href="#author">The author</a></li>
-              <li><a href="#praise">Praise</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
 
@@ -34,19 +34,19 @@ export default function Footer() {
             <h4>The book</h4>
             <ul>
               <li><a href={HARPER_URL} target="_blank" rel="noopener">Pre-order</a></li>
-              <li><a href="#buy">Hardcover</a></li>
-              <li><a href="#buy">E-book</a></li>
-              <li><a href="#buy">Audiobook</a></li>
+              <li><a href="/#buy">Hardcover</a></li>
+              <li><a href="/#buy">E-book</a></li>
+              <li><a href="/#buy">Audiobook</a></li>
             </ul>
           </div>
 
           <div className="foot-col">
             <h4>Inquiries</h4>
             <ul>
-              <li><a href="#buy">Press &amp; media</a></li>
-              <li><a href="#buy">Speaking</a></li>
-              <li><a href="#buy">Booksellers</a></li>
-              <li><a href="#buy">Rights</a></li>
+              <li><a href="/contact">Press &amp; media</a></li>
+              <li><a href="/contact">Speaking</a></li>
+              <li><a href="/contact">Booksellers</a></li>
+              <li><a href="/contact">Rights</a></li>
             </ul>
           </div>
         </div>
@@ -54,9 +54,9 @@ export default function Footer() {
         <div className="foot-bottom">
           <div className="copy">© 2026 John Donnelly</div>
           <div className="legal">
-            <a href="#top">Privacy</a>
-            <a href="#top">Terms</a>
-            <a href="#buy">Contact</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="/contact">Contact</a>
           </div>
         </div>
       </div>

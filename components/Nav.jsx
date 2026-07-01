@@ -63,11 +63,11 @@ export default function Nav({ variant = "purple" }) {
         <button className="mclose" aria-label="Close menu" onClick={() => setOpen(false)}>
           ×
         </button>
-        <a href="#top" onClick={() => setOpen(false)}>Home</a>
-        <a href="#author" onClick={() => setOpen(false)}>The author</a>
-        <a href="#praise" onClick={() => setOpen(false)}>Praise</a>
+        <a href="/" onClick={() => setOpen(false)}>Home</a>
+        <a href="/about" onClick={() => setOpen(false)}>About</a>
+        <a href="/contact" onClick={() => setOpen(false)}>Contact</a>
         <a
-          href="#buy"
+          href="/#buy"
           onClick={() => setOpen(false)}
           style={{ color: "var(--lent-4)" }}
         >
