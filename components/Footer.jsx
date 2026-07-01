@@ -11,10 +11,14 @@ export default function Footer() {
               Author of <em>Lifeline: The Story of PEPFAR, the Greatest
               Humanitarian Initiative of Our Time</em> (HarperCollins, October 2026).
             </p>
-            <div className="foot-cover" aria-hidden="true">
-              <span className="ft">LIFELINE</span>
-              <span className="fb">John Donnelly</span>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="foot-cover"
+              src="/assets/footer/cover.jpg"
+              width="1100"
+              height="1661"
+              alt="Lifeline book cover"
+            />
           </div>
 
           <div className="foot-col">
