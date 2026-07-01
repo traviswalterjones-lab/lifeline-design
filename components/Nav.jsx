@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import { HARPER_URL } from "@/lib/content";
 
-export default function Nav() {
+export default function Nav({ variant = "purple" }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const light = variant === "light";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -23,7 +24,9 @@ export default function Nav() {
 
   return (
     <>
-      <header className={`site-nav nav${scrolled ? " scrolled" : ""}`}>
+      <header
+        className={`site-nav nav${light ? " nav--light" : ""}${scrolled ? " scrolled" : ""}`}
+      >
         <div className="wrap nav-inner">
           <div className="nav-side left">
             <button
@@ -39,7 +42,9 @@ export default function Nav() {
             </button>
           </div>
 
-          <a className="brand" href="#top" aria-label="LIFELINE" />
+          <a className="brand" href={light ? "/" : "#top"} aria-label="LIFELINE">
+            {light ? <span className="name">LIFELINE</span> : null}
+          </a>
 
           <div className="nav-side right">
             <a

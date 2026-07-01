@@ -223,6 +223,16 @@ h3 {
   box-shadow: 0 8px 30px rgba(20, 12, 40, 0.22);
   background: #5d4f82;
 }
+/* light header variant (subpages) — white in BOTH states; higher specificity
+   (.site-nav.nav--light[.scrolled]) so it beats the purple rules regardless of
+   source order. Text stays dark; the Pre-order pill is unchanged. */
+.site-nav.nav--light {
+  background: #fff;
+}
+.site-nav.nav--light.scrolled {
+  background: #fff;
+  box-shadow: 0 1px 0 var(--hairline), 0 10px 26px rgba(20, 12, 40, 0.06);
+}
 .nav-inner {
   height: 66px;
   display: grid;
