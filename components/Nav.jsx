@@ -42,9 +42,7 @@ export default function Nav({ variant = "purple" }) {
             </button>
           </div>
 
-          <a className="brand" href={light ? "/" : "#top"} aria-label="LIFELINE">
-            {light ? <span className="name">LIFELINE</span> : null}
-          </a>
+          <a className="brand" href={light ? "/" : "#top"} aria-label="LIFELINE" />
 
           <div className="nav-side right">
             <a
