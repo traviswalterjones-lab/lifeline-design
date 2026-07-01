@@ -310,13 +310,51 @@ h3 {
 }
 
 /* ============================================================
-   HERO — promo: book cover on violet + pre-order
+   HERO — checkerboard clipping curtain over a pinned promo
+   The tile grid loads flush to the top (over the header), then
+   scrolls up to reveal the sticky header + book on the violet.
    ============================================================ */
-.promo-hero {
+.intro-reveal {
+  position: relative;
+  margin-top: -66px; /* pull up so the grid also covers the sticky header */
+  background: radial-gradient(140% 108% at 50% 33%, #3d2976 0%, #2c1a5a 50%, #170c33 100%);
+}
+.ph-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 66px; /* clear the header bar once revealed */
+  overflow: hidden;
+}
+/* the patterned clipping grid that lifts on scroll */
+.ir-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  gap: 2px;
+  z-index: 50; /* above the header (40) so it covers it on load */
+  pointer-events: none;
+}
+.ir-tile {
   position: relative;
   overflow: hidden;
-  background: radial-gradient(140% 108% at 50% 33%, #3d2976 0%, #2c1a5a 50%, #170c33 100%);
-  padding-block: clamp(44px, 7vh, 96px) clamp(64px, 9vh, 116px);
+  aspect-ratio: 1 / 1;
+  background: #14102a;
+}
+.ir-tile.is-empty {
+  background: transparent;
+}
+.ir-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05) brightness(0.92);
+  display: block;
 }
 .ph-inner {
   display: flex;
