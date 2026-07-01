@@ -8,7 +8,9 @@
       "Read(//private/tmp/**)",
       "Bash(curl -s http://localhost:3100/)",
       "Bash(curl -s -o /dev/null -w \"/favicon.ico: %{http_code}\\\\n\" http://localhost:3100/favicon.ico)",
-      "Bash(xargs kill -9)"
+      "Bash(xargs kill -9)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --hide-scrollbars --window-size=1440,300 --screenshot=/private/tmp/claude-501/-Users-haran-Documents-Documents---Paige-s-MacBook-16-WEBSITES-Lifeline---Design/84bd43e5-dfae-415a-bedb-6cac9eb01e33/scratchpad/s1-nav.png --virtual-time-budget=3500 http://localhost:3100/)",
+      "Bash(echo \"done: $?\")"
     ]
   }
 }

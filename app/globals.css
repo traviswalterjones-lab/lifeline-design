@@ -22,7 +22,10 @@
   --violet: #4a2a8c;
   --violet-deep: #34206a;
   --violet-ink: #efe9ff;
-  --nav-violet: #6e5f94;
+  /* nav keyed to the promo/cover violet — brighter & more saturated than
+     the previous washed-out #6e5f94, and lighter than the deep --violet
+     button so the filled purple pill reads against it */
+  --nav-violet: #5a3cc0;
 
   /* lenticular accents echoing the cover's Africa silhouette */
   --lent-1: #5b2c98;
@@ -176,12 +179,9 @@ h3 {
 .btn-violet:hover {
   opacity: 0.9;
 }
-.btn-onwhite {
-  background: #fff;
-  color: #111;
-}
-.btn-onwhite:hover {
-  opacity: 0.85;
+/* filled purple pre-order pill (nav + CTA) */
+.btn-violet {
+  box-shadow: 0 2px 12px rgba(20, 12, 40, 0.22);
 }
 .btn-ghost {
   background: transparent;
@@ -213,8 +213,8 @@ h3 {
   transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 .site-nav.scrolled {
-  box-shadow: 0 8px 30px rgba(20, 12, 40, 0.18);
-  background: #5d4f82;
+  box-shadow: 0 8px 30px rgba(20, 12, 40, 0.22);
+  background: #4c2fa8;
 }
 .nav-inner {
   height: 66px;
@@ -257,10 +257,6 @@ h3 {
 }
 .nav-burger:hover {
   opacity: 0.7;
-}
-.nav .btn-onwhite {
-  background: #fff;
-  color: var(--violet-deep);
 }
 @media (max-width: 560px) {
   .nav-burger span {

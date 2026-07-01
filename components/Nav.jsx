@@ -45,7 +45,7 @@ export default function Nav() {
 
           <div className="nav-side right">
             <a
-              className="btn btn-onwhite btn-sm"
+              className="btn btn-violet btn-sm"
               href={HARPER_URL}
               target="_blank"
               rel="noopener"

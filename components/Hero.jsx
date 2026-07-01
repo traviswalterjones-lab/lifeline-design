@@ -97,7 +97,7 @@ export default function Hero() {
           <div className="ed-author">John Donnelly</div>
 
           <div className="ed-actions">
-            <a className="btn btn-onwhite btn-lg" href={HARPER_URL} target="_blank" rel="noopener">
+            <a className="btn btn-violet btn-lg" href={HARPER_URL} target="_blank" rel="noopener">
               Pre-order now
             </a>
             <div className="ed-retailers">
