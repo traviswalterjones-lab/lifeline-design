@@ -1,6 +1,8 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Story from "@/components/Story";
+import LivesLost from "@/components/LivesLost";
+import VideoWall from "@/components/VideoWall";
 import AuthorIntro from "@/components/AuthorIntro";
 import Praise from "@/components/Praise";
 import FinalCTA from "@/components/FinalCTA";
@@ -13,6 +15,8 @@ export default function Home() {
       <main>
         <Hero />
         <Story />
+        <LivesLost />
+        <VideoWall />
         <AuthorIntro />
         <Praise />
         <FinalCTA />

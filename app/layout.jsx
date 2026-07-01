@@ -1,6 +1,6 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import FixedBrand from "@/components/FixedBrand";
+import FixedBrand from "@/components/FixedBrand2";
 
 // Variable fonts — loaded without a fixed weight so the design's fine-grained
 // weight axis (320 / 340 / 480 / 540 …) resolves correctly.
