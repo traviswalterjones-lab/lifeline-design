@@ -563,7 +563,7 @@ h3 {
 .vw-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
+  gap: 0;
 }
 .vw-tile {
   position: relative;
