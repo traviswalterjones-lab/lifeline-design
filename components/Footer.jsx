@@ -25,7 +25,6 @@ export default function Footer() {
             <h4>Explore</h4>
             <ul>
               <li><a href="#top">Home</a></li>
-              <li><a href="#reporting">The reporting</a></li>
               <li><a href="#author">The author</a></li>
               <li><a href="#praise">Praise</a></li>
             </ul>

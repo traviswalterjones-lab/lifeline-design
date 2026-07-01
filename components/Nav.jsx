@@ -39,9 +39,7 @@ export default function Nav() {
             </button>
           </div>
 
-          <a className="brand" href="#top">
-            <span className="name">LIFELINE</span>
-          </a>
+          <a className="brand" href="#top" aria-label="LIFELINE" />
 
           <div className="nav-side right">
             <a
@@ -61,7 +59,6 @@ export default function Nav() {
           ×
         </button>
         <a href="#top" onClick={() => setOpen(false)}>Home</a>
-        <a href="#reporting" onClick={() => setOpen(false)}>The reporting</a>
         <a href="#author" onClick={() => setOpen(false)}>The author</a>
         <a href="#praise" onClick={() => setOpen(false)}>Praise</a>
         <a
