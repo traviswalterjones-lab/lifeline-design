@@ -280,12 +280,17 @@ h3 {
   background: transparent;
 }
 
-/* When over darker content: make the text semi-ghostly violet (no inversion) */
+/* When over darker content: glass-like text overlay with translucent blur */
 .fixed-brand.xray {
-  --brand-color: rgba(110, 95, 148, 0.6);
-  opacity: 0.9;
-  background: transparent;
+  --brand-color: rgba(110, 95, 148, 0.95);
+  opacity: 0.98;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   mix-blend-mode: normal;
+  color: var(--brand-color);
 }
 
 .fixed-brand.partial .name {
@@ -393,9 +398,10 @@ h3 {
 }
 
 /* ============================================================
-   HERO — checkerboard clipping curtain over a pinned promo
-   The tile grid loads flush to the top (over the header), then
-   scrolls up to reveal the sticky header + book on the violet.
+   HERO — checkerboard clipping curtain over a pinned promo.
+   The grid covers the viewport (header included) on load and
+   scrolls up 1:1 with the page (native scroll) to reveal the
+   pinned header + book — activated by and following the scroll.
    ============================================================ */
 .intro-reveal {
   position: relative;
@@ -412,7 +418,7 @@ h3 {
   padding-top: 66px; /* clear the header bar once revealed */
   overflow: hidden;
 }
-/* the patterned clipping grid that lifts on scroll */
+/* the patterned clipping grid that scrolls up over the pinned stage */
 .ir-grid {
   position: absolute;
   top: 0;

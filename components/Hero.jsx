@@ -2,14 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { HARPER_URL, RETAILERS, ON_SALE } from "@/lib/content";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-// How much scroll (in viewport heights) the curtain takes to fully lift.
-const REVEAL_VH = 0.8;
+gsap.registerPlugin(useGSAP);
 
 const BOOK = "/assets/promo%20hero/book-3d.png";
 const HARPER = "/assets/promo%20hero/harper-logo.png";
@@ -29,17 +25,26 @@ export default function Hero() {
   const stageRef = useRef(null);
   const [grid, setGrid] = useState({ template: "", cells: [], height: "100vh" });
 
-  // Build the patterned clipping grid: solid rows that cover the viewport
-  // (and the header), then a checkerboard band that dapples the reveal edge.
+  // Build the clipping grid. The stage (book) is pinned (sticky) while the grid
+  // scrolls up over it 1:1 with the page — native scroll, so the reveal follows
+  // the scroll exactly and stays smooth (no scrub).
   useEffect(() => {
     const build = () => {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const w = window.innerWidth;
       const vh = window.innerHeight;
+
+      if (reduce) {
+        // no curtain for reduced motion — show the hero directly
+        setGrid({ template: "", cells: [], height: `${vh}px` });
+        return;
+      }
+
       const isMobile = w < 600;
       const cols = isMobile ? 4 : 11;
       const tile = w / cols;
-      const solidRows = Math.ceil(vh / tile) + 1; // fully cover viewport + header
-      const checkerRows = isMobile ? 4 : 5;
+      const solidRows = Math.ceil(vh / tile) + 1; // cover the viewport + header
+      const checkerRows = 3; // dappled trailing edge
       const rows = solidRows + checkerRows;
 
       const cells = [];
@@ -55,16 +60,13 @@ export default function Hero() {
           }
         }
       }
-
       const gridH = rows * tile + (rows - 1) * 2;
-      // The curtain lift is scrubbed over REVEAL_VH of scroll (see useGSAP),
-      // so the section only needs: reveal distance + a short hold + the pinned
-      // viewport. Stage un-pins at (height - vh); keep that past the reveal.
+      // Stage stays pinned for (height - vh); keep that >= gridH so the grid
+      // clears while the hero is pinned, plus a short hold.
       setGrid({
         template: `repeat(${cols}, 1fr)`,
         cells,
-        gridH,
-        height: `${vh * (1 + REVEAL_VH + 0.3)}px`,
+        height: `${gridH + vh * 1.12}px`,
       });
     };
 
@@ -83,32 +85,13 @@ export default function Hero() {
 
   useGSAP(
     () => {
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       const book = stageRef.current?.querySelector(".ph-cover");
-      if (book && !reduce) {
+      if (book) {
         gsap.to(book, { y: -10, duration: 3.6, ease: "sine.inOut", yoyo: true, repeat: -1 });
       }
-
-      // Lift the clipping grid faster than the page scrolls: it naturally rises
-      // 1:1 with scroll; this adds the remaining travel so the whole grid clears
-      // in REVEAL_VH of scroll instead of its full height.
-      const gridEl = sectionRef.current?.querySelector(".ir-grid");
-      if (gridEl && grid.gridH) {
-        const reveal = window.innerHeight * REVEAL_VH;
-        gsap.to(gridEl, {
-          y: -Math.max(0, grid.gridH - reveal),
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "+=" + reveal,
-            scrub: 0.3,
-            invalidateOnRefresh: true,
-          },
-        });
-      }
     },
-    { scope: sectionRef, dependencies: [grid] }
+    { scope: sectionRef }
   );
 
   return (
