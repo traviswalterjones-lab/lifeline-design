@@ -608,7 +608,7 @@ h3 {
 .ai-photo {
   position: relative;
   overflow: hidden;
-  border-radius: var(--r-lg);
+  border-radius: 0;
   aspect-ratio: 4 / 5;
   max-width: 440px;
   justify-self: center;
@@ -631,8 +631,8 @@ h3 {
   font-size: clamp(28px, 3.4vw, 44px);
   font-weight: 340;
   letter-spacing: -0.03em;
-  line-height: 1.07;
-  max-width: 20ch;
+  line-height: 1.1;
+  max-width: none;
 }
 .ai-body h2 em {
   font-style: italic;

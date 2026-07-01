@@ -59,16 +59,10 @@ export default function AuthorIntro() {
         <div className="ai-body">
           <div className="eyebrow ai-r">The author</div>
           <h2 className="ai-r">
-            John Donnelly spent thirty years as a journalist — much of it covering
-            global health, AIDS, and America&rsquo;s response to the pandemic. That
-            reporting led to <em>Lifeline.</em>
+            John Donnelly spent thirty years as a journalist—much of it covering
+            stories of global health, AIDS, and America&rsquo;s response to the
+            deadly pandemic. That reporting led to <em>Lifeline</em>.
           </h2>
-          <p className="ai-r">
-            He has reported from Jerusalem, Cairo, Pretoria, Washington and beyond
-            for the Boston Globe, the Miami Herald and the Associated Press. For
-            more than a decade he chronicled the politics of AIDS and the people —
-            American and African — who raced to turn the tide.
-          </p>
           <div className="ai-cta ai-r">
             <a className="btn btn-ghost btn-md" href="#author">
               More about John
