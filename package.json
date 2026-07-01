@@ -1,0 +1,19 @@
+{
+  "name": "lifeline-john-donnelly",
+  "version": "1.0.0",
+  "private": true,
+  "description": "John Donnelly — Lifeline. Author site built with Next.js and GSAP.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@gsap/react": "2.1.2",
+    "gsap": "3.13.0",
+    "next": "^15.5.19",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /Applications/ 2>/dev/null | grep -iE 'chrome|chromium|brave|edge|firefox' ; echo \"---\"; ls \"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" 2>/dev/null && echo \"CHROME FOUND\")",
+      "Read(//Applications/**)",
+      "Read(//Applications/Google Chrome.app/Contents/MacOS/**)",
+      "Bash(grep -iE \"404|GET /\" /tmp/lifeline-server.log 2>/dev/null | grep -i 404 | tail -10 ; echo \"--- recent log ---\"; tail -15 /tmp/lifeline-server.log)",
+      "Read(//private/tmp/**)",
+      "Bash(curl -s http://localhost:3100/)",
+      "Bash(curl -s -o /dev/null -w \"/favicon.ico: %{http_code}\\\\n\" http://localhost:3100/favicon.ico)",
+      "Bash(xargs kill -9)"
+    ]
+  }
+}
