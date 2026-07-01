@@ -256,7 +256,11 @@ h3 {
   color: #000;
 }
 
-/* ---------- fixed bottom-center brand (overlay) ---------- */
+/* ---------- fixed bottom-center brand (inverted knockout via mix-blend) ----------
+   White text + mix-blend-mode: difference inverts the wordmark against whatever
+   page content scrolls behind it (dark over light, light over dark), always
+   legible. NO panel, NO background, NO blur — those defeat the blend. The
+   apparent colour comes from the blend, so there is no CSS colour to animate. */
 .fixed-brand {
   position: fixed;
   bottom: 22px;
@@ -267,81 +271,43 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* remove surrounding translucent box */
   padding: 0;
-  border-radius: 0;
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 0.04em;
-  --brand-color: var(--nav-violet);
-  --brand-clip: 100%;
-  color: var(--brand-color);
+  color: #fff;
   background: transparent;
-  transition: opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1), color 0.28s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-  mix-blend-mode: normal;
+  mix-blend-mode: difference;
   opacity: 1;
-  will-change: opacity, transform, color;
+  transition: opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
 .fixed-brand .name {
-  /* text-only brand, no box */
-  padding: 0;
   color: inherit;
   background: transparent;
 }
-
-/* When over darker content: glass-like text overlay with translucent blur */
-.fixed-brand.xray {
-  --brand-color: rgba(110, 95, 148, 0.95);
-  opacity: 0.98;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  mix-blend-mode: normal;
-  color: var(--brand-color);
-}
-
-.fixed-brand.partial .name {
-  color: transparent;
-  background-image: linear-gradient(
-    to right,
-    var(--brand-color) 0%,
-    var(--brand-color) var(--brand-clip),
-    transparent var(--brand-clip),
-    transparent 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-fill-color: transparent;
-}
-
-/* Hidden when over the promo area (but not the curtain) */
+/* hidden over opted-out sections + the footer: fade + slight drop; blend stays */
 .fixed-brand.hidden {
   opacity: 0;
-  pointer-events: none;
   transform: translateX(-50%) translateY(8px);
-}
-
-/* When the page is not scrolled, show black text over light areas */
-.fixed-brand.not-scrolled {
-  --brand-color: #000;
-  color: var(--brand-color);
-}
-
-/* When the page is scrolled (header revealed), show purple to match header */
-.fixed-brand.scrolled {
-  --brand-color: var(--nav-violet);
-  color: var(--brand-color);
 }
 
 @media (max-width: 760px) {
   .fixed-brand { font-size: 22px; bottom: 18px; }
 }
-
 @media (max-width: 420px) {
   .fixed-brand { font-size: 18px; bottom: 14px; }
+}
+
+/* fallback: no mix-blend-mode support -> a solid legible colour (never glass) */
+@supports not (mix-blend-mode: difference) {
+  .fixed-brand {
+    color: var(--nav-violet);
+    mix-blend-mode: normal;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fixed-brand { transition: none; }
 }
 .nav-burger {
   display: inline-flex;

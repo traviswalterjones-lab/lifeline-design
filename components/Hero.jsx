@@ -96,7 +96,7 @@ export default function Hero() {
 
   return (
     <section className="intro-reveal" id="top" ref={sectionRef} style={{ height: grid.height }}>
-      <div className="ph-stage" ref={stageRef}>
+      <div className="ph-stage" ref={stageRef} data-hide-brand>
         <div className="wrap ph-inner">
           <div className="ph-cover">
             {/* eslint-disable-next-line @next/next/no-img-element */}

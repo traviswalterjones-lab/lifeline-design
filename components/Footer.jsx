@@ -2,7 +2,7 @@ import { HARPER_URL } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" data-hide-brand>
       <div className="wrap">
         <div className="foot-top">
           <div className="foot-brand">
