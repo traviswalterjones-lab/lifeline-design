@@ -1,6 +1,7 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import FixedBrand from "@/components/FixedBrand2";
+import Splash from "@/components/Splash";
 
 // Variable fonts — loaded without a fixed weight so the design's fine-grained
 // weight axis (320 / 340 / 480 / 540 …) resolves correctly.
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
         <div className="imprint" aria-hidden="true" />
         {children}
         <FixedBrand />
+        <Splash />
       </body>
     </html>
   );
