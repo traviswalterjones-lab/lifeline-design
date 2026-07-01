@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 const VIDEOS = [
   { f: "1-Rice", label: "Condoleezza Rice" },
   { f: "2-march", label: "An AIDS awareness march" },
-  { f: "3-Dybul", label: "Mark Dybul", crop: { scale: 1.3 } },
+  { f: "3-Dybul", label: "Mark Dybul", crop: { scale: 1.3, origin: "50% 0%" } },
   { f: "4-SA", label: "South Africa" },
   { f: "5-Mugyeni", label: "Dr. Peter Mugyenyi", crop: { scale: 1.42, origin: "0% 0%" } },
   { f: "6-Bush", label: "President George W. Bush", crop: { scale: 1.32 } },

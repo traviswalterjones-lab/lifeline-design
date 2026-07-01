@@ -27,9 +27,9 @@ export default function AuthorIntro() {
       const img = ref.current.querySelector(".ai-photo img");
       gsap.fromTo(
         img,
-        { yPercent: -6 },
+        { yPercent: -3 },
         {
-          yPercent: 6,
+          yPercent: 3,
           ease: "none",
           scrollTrigger: {
             trigger: ref.current.querySelector(".ai-photo"),
