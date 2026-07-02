@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import VideoWall from "@/components/VideoWall";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
@@ -14,7 +13,7 @@ const BONNIE = "bonnie@hillnadell.com";
 
 const CONTACTS = [
   { label: "Press & media", email: KATE },
-  { label: "Speaking & events", email: KATE },
+  { label: "Speaking & events", email: BONNIE },
   { label: "Foreign & subsidiary rights", email: BONNIE },
 ];
 
@@ -24,8 +23,6 @@ export default function Contact() {
       <Nav variant="light" />
 
       <main>
-        <VideoWall />
-
         <section className="section contact-intro">
           <div className="wrap">
             <div className="eyebrow">Get in touch</div>
