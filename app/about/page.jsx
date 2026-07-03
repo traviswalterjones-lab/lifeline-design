@@ -16,9 +16,8 @@ export default function About() {
         <section className="section about-head">
           <div className="wrap">
             <div className="eyebrow">The author</div>
-            <h1 className="about-h1">John Donnelly</h1>
             <p className="about-intro">
-              He spent thirty years as a reporter, based in Jerusalem; Cairo; South
+              <strong>John Donnelly</strong> spent thirty years as a reporter, based in Jerusalem; Cairo; South
               Africa; Haiti; Washington, D.C.; New York; Miami; and Vermont. At{" "}
               <em>The Boston Globe</em>, he closely covered issues around global
               health, from both Washington and from countries around the world,
@@ -74,7 +73,7 @@ export default function About() {
                 Donnelly is the author of two earlier nonfiction books—
                 <em>A Twist of Faith</em> and <em>Beyond Murder</em> (co-authored with
                 John Philpin)—and a former fellow of Duke University and the Kaiser
-                Family Foundation. He also received a Bellagio residency from the
+                Family Foundation. He received a Bellagio residency from the
                 Rockefeller Foundation in 2024, which helped in the writing of{" "}
                 <em>Lifeline</em>. He lives outside Washington, D.C.
               </p>
