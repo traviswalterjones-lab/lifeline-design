@@ -62,10 +62,7 @@ export default function About() {
 
             <div className="about-body">
               <p>
-                He also reported for <em>The Miami Herald</em>, and the Associated
-                Press. He won several awards for his work, including being part of the{" "}
-                <em>Herald</em>&rsquo;s Pulitzer Prize coverage on the aftermath of
-                Hurricane Andrew. Following his journalism career, he spent one decade
+                He also reported for <em>The Miami Herald</em> and the Associated Press, winning several awards for his work. Following his journalism career, he spent one decade
                 at the World Bank, working as an advisor for both the World Bank
                 President and the CEO of the International Finance Corporation.
               </p>
