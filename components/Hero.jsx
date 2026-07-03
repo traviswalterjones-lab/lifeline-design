@@ -23,7 +23,7 @@ const TILES = [
 export default function Hero() {
   const sectionRef = useRef(null);
   const stageRef = useRef(null);
-  const [grid, setGrid] = useState({ template: "", cells: [], height: "100vh" });
+  const [grid, setGrid] = useState({ template: "", cells: [], height: "100vh", rowH: 0 });
 
   // Build the clipping grid. The stage (book) is pinned (sticky) while the grid
   // scrolls up over it 1:1 with the page — native scroll, so the reveal follows
@@ -36,7 +36,7 @@ export default function Hero() {
 
       if (reduce) {
         // no curtain for reduced motion — show the hero directly
-        setGrid({ template: "", cells: [], height: `${vh}px` });
+        setGrid({ template: "", cells: [], height: `${vh}px`, rowH: 0 });
         return;
       }
 
@@ -67,6 +67,7 @@ export default function Hero() {
         template: `repeat(${cols}, 1fr)`,
         cells,
         height: `${gridH + vh * 1.12}px`,
+        rowH: tile, // explicit px row height — Safari collapses aspect-ratio-only grid rows
       });
     };
 
@@ -127,7 +128,14 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="ir-grid" aria-hidden="true" style={{ gridTemplateColumns: grid.template }}>
+      <div
+        className="ir-grid"
+        aria-hidden="true"
+        style={{
+          gridTemplateColumns: grid.template,
+          gridAutoRows: grid.rowH ? `${grid.rowH}px` : undefined,
+        }}
+      >
         {grid.cells.map((cell) =>
           cell.empty ? (
             <div className="ir-tile is-empty" key={cell.key} />
