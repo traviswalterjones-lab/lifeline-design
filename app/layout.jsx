@@ -1,4 +1,5 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import FixedBrand from "@/components/FixedBrand2";
 import Splash from "@/components/Splash";
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
         {children}
         <FixedBrand />
         <Splash />
+        <Analytics />
       </body>
     </html>
   );
