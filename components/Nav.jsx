@@ -65,6 +65,7 @@ export default function Nav({ variant = "purple" }) {
         </button>
         <a href="/" onClick={() => setOpen(false)}>Home</a>
         <a href="/about" onClick={() => setOpen(false)}>About</a>
+        <a href="/events" onClick={() => setOpen(false)}>Events</a>
         <a href="/contact" onClick={() => setOpen(false)}>Contact</a>
         <a
           href={HARPER_URL}

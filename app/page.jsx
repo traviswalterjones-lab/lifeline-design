@@ -5,6 +5,7 @@ import LivesLost from "@/components/LivesLost";
 import VideoWall from "@/components/VideoWall";
 import AuthorIntro from "@/components/AuthorIntro";
 import Praise from "@/components/Praise";
+import Events from "@/components/Events";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <VideoWall />
         <AuthorIntro />
         <Praise />
+        <Events />
         <FinalCTA />
       </main>
       <Footer />

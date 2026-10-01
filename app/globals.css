@@ -1215,3 +1215,209 @@ body.menu-open .fixed-brand {
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================================
+   Events — homepage teaser (.events-teaser) + full page (/events)
+   ============================================================ */
+
+/* ---- shared section header (heading left, link right) ---- */
+.sec-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+.sec-head h2 {
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: var(--w-mid);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* ---- homepage teaser rows ---- */
+.evrow {
+  display: grid;
+  grid-template-columns: 150px 1fr auto auto;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--hairline);
+}
+.evrow:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+.evrow > div {
+  min-width: 0; /* let the 1fr track shrink so long venues wrap, not overflow */
+}
+.evrow .date {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.evrow .city {
+  font-size: 21px;
+  font-weight: var(--w-link);
+  letter-spacing: -0.01em;
+}
+.evrow .venue {
+  font-size: 15px;
+  font-weight: var(--w-light);
+  color: #555;
+}
+.evrow .evtime {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .sec-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .evrow {
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+  }
+  .evrow .date {
+    grid-column: 1 / -1;
+  }
+  .evrow .evtime {
+    grid-column: 1;
+  }
+  .evrow .rsvp {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    align-self: center;
+    justify-self: end;
+  }
+}
+
+/* ---- full events page ---- */
+.ev-hero {
+  padding-block: 96px 8px;
+}
+.ev-hero .eyebrow {
+  margin-bottom: 18px;
+}
+.ev-h1 {
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: var(--w-mid);
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  margin: 0;
+  text-wrap: pretty;
+  max-width: 22ch;
+}
+.ev-list {
+  padding-top: 24px;
+}
+.month {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.5;
+  margin: 48px 0 6px;
+}
+.ev {
+  display: grid;
+  grid-template-columns: 130px 1fr 170px auto;
+  gap: 28px;
+  align-items: center;
+  padding: 26px 4px;
+  border-top: 1px solid var(--hairline);
+  transition: background 0.15s;
+}
+.ev:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+.ev:hover {
+  background: var(--surface-soft);
+}
+.ev > div {
+  min-width: 0; /* let the 1fr track shrink so long venues wrap, not overflow */
+}
+.ev .d .day {
+  font-size: 30px;
+  font-weight: var(--w-mid);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.ev .d .mo {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.55;
+  margin-top: 6px;
+}
+.ev .city {
+  font-size: 22px;
+  font-weight: var(--w-link);
+  letter-spacing: -0.01em;
+}
+.ev .venue {
+  font-size: 15px;
+  font-weight: var(--w-light);
+  color: #555;
+  margin-top: 3px;
+}
+.ev .fmt {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ev .fmt .time {
+  display: block;
+  color: #888;
+  margin-top: 4px;
+}
+.ev .pill {
+  justify-self: end;
+}
+.ev .ev-soon {
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.ev-cta {
+  text-align: center;
+  padding-block: 72px 96px;
+}
+.ev-cta h2 {
+  font-size: clamp(30px, 3.6vw, 46px);
+  font-weight: var(--w-mid);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+.ev-cta .row {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+  .ev-hero {
+    padding-block: 64px 0;
+  }
+  .ev {
+    grid-template-columns: 64px 1fr;
+    gap: 16px;
+    row-gap: 6px;
+  }
+  .ev .fmt {
+    grid-column: 2;
+  }
+  .ev .pill {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 8px;
+  }
+}
