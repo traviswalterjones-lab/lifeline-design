@@ -1048,6 +1048,9 @@ body.menu-open .fixed-brand {
   margin-bottom: 8px;
 }
 .ci-email {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
   font-size: clamp(17px, 1.6vw, 20px);
   font-weight: 340;
   letter-spacing: -0.01em;
@@ -1055,6 +1058,9 @@ body.menu-open .fixed-brand {
   padding-bottom: 3px;
   overflow-wrap: anywhere;
   transition: border-color 0.15s;
+}
+.ci-email + .ci-email {
+  margin-top: 10px;
 }
 .ci-email:hover {
   border-color: #000;

@@ -10,11 +10,12 @@ export const metadata = {
 
 const KATE = "kate.d'esmond@harpercollins.com";
 const BONNIE = "bonnie@hillnadell.com";
+const LAURA = "hambleton.laura@gmail.com";
 
 const CONTACTS = [
-  { label: "Press & media", email: KATE },
-  { label: "Speaking & events", email: BONNIE },
-  { label: "Foreign & subsidiary rights", email: BONNIE },
+  { label: "Press & media", emails: [KATE] },
+  { label: "Speaking & events", emails: [BONNIE, LAURA] },
+  { label: "Foreign & subsidiary rights", emails: [BONNIE] },
 ];
 
 export default function Contact() {
@@ -32,11 +33,13 @@ export default function Contact() {
 
             <div className="contact-list">
               {CONTACTS.map((c) => (
-                <div className="contact-item" key={c.label + c.email}>
+                <div className="contact-item" key={c.label}>
                   <div className="ci-label">{c.label}</div>
-                  <a className="ci-email" href={`mailto:${c.email}`}>
-                    {c.email}
-                  </a>
+                  {c.emails.map((email) => (
+                    <a className="ci-email" key={email} href={`mailto:${email}`}>
+                      {email}
+                    </a>
+                  ))}
                 </div>
               ))}
             </div>
