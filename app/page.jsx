@@ -15,12 +15,12 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Events />
         <Story />
         <LivesLost />
         <VideoWall />
         <AuthorIntro />
         <Praise />
-        <Events />
         <FinalCTA />
       </main>
       <Footer />
