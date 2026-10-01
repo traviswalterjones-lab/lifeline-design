@@ -12,9 +12,6 @@ export default function Events() {
       <div className="wrap">
         <Reveal as="div" className="sec-head" y={16}>
           <h2>On tour this fall</h2>
-          <a className="btn btn-ghost btn-md" href="/events">
-            All events
-          </a>
         </Reveal>
 
         <Reveal className="ev-rows" selector=".evrow" stagger={0.1} y={22}>
@@ -43,6 +40,12 @@ export default function Events() {
             </div>
           ))}
         </Reveal>
+
+        <div className="ev-foot">
+          <a className="btn btn-ghost btn-md" href="/events">
+            All events
+          </a>
+        </div>
       </div>
     </section>
   );

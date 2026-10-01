@@ -1275,6 +1275,12 @@ body.menu-open .fixed-brand {
 .evrow .evtime {
   white-space: nowrap;
 }
+/* "All events" sits under the RSVP/Details column, below the last row */
+.ev-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
 
 @media (max-width: 760px) {
   .sec-head {
