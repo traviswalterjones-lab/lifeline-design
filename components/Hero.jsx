@@ -114,7 +114,7 @@ export default function Hero() {
 
           <div className="ph-cta">
             <a className="btn btn-onlight btn-lg" href={HARPER_URL} target="_blank" rel="noopener">
-              Pre-order now
+              Order now
             </a>
             <div className="ph-retailers">
               {RETAILERS.map((r) => (

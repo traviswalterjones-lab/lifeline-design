@@ -53,7 +53,7 @@ export default function Nav({ variant = "purple" }) {
               target="_blank"
               rel="noopener"
             >
-              Pre-order
+              Order
             </a>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function Nav({ variant = "purple" }) {
           onClick={() => setOpen(false)}
           style={{ color: "var(--nav-violet)" }}
         >
-          Pre-order →
+          Order →
         </a>
       </nav>
     </>

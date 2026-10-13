@@ -15,7 +15,7 @@ export default function FinalCTA() {
             target="_blank"
             rel="noopener"
           >
-            Pre-order now
+            Order now
           </a>
         </div>
         <div className="retail-row r">
