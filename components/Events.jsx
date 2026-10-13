@@ -1,12 +1,18 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
-import { EVENTS } from "@/lib/content";
-
-// Homepage teaser — the first three tour dates, with a link to the full page.
-const TEASER = EVENTS.slice(0, 3);
+import { EVENTS, upcomingEvents, isPastEvent } from "@/lib/content";
 
 export default function Events() {
+  // SSR-safe default (first three); refined to today's upcoming after mount so
+  // past dates drop off automatically, without needing a rebuild. Keyed by
+  // index so the reveal animation keeps working when the rows swap.
+  const [rows, setRows] = useState(() => EVENTS.slice(0, 3));
+  useEffect(() => {
+    setRows(upcomingEvents(EVENTS, 3));
+  }, []);
+
   return (
     <section className="section events-teaser" id="events">
       <div className="wrap">
@@ -15,30 +21,33 @@ export default function Events() {
         </Reveal>
 
         <Reveal className="ev-rows" selector=".evrow" stagger={0.1} y={22}>
-          {TEASER.map((e) => (
-            <div className="evrow" key={e.dateLabel + e.city}>
-              <div className="date">{e.dateLabel}</div>
-              <div>
-                <div className="city">{e.city}</div>
-                <div className="venue">{e.venueTeaser}</div>
+          {rows.map((e, i) => {
+            const showRsvp = e.rsvp && !isPastEvent(e);
+            return (
+              <div className="evrow" key={i}>
+                <div className="date">{e.dateLabel}</div>
+                <div>
+                  <div className="city">{e.city}</div>
+                  <div className="venue">{e.venueTeaser}</div>
+                </div>
+                <div className="venue evtime">{e.timeTeaser}</div>
+                {showRsvp ? (
+                  <a
+                    className="btn btn-ghost btn-sm rsvp"
+                    href={e.rsvp}
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    RSVP
+                  </a>
+                ) : (
+                  <a className="btn btn-ghost btn-sm rsvp" href="/events">
+                    Details
+                  </a>
+                )}
               </div>
-              <div className="venue evtime">{e.timeTeaser}</div>
-              {e.rsvp ? (
-                <a
-                  className="btn btn-ghost btn-sm rsvp"
-                  href={e.rsvp}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  RSVP
-                </a>
-              ) : (
-                <a className="btn btn-ghost btn-sm rsvp" href="/events">
-                  Details
-                </a>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </Reveal>
 
         <div className="ev-foot">

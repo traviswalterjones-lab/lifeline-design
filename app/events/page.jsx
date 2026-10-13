@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { EVENTS } from "@/lib/content";
+import { EVENTS, isPastEvent } from "@/lib/content";
 
 export const metadata = {
   title: "John Donnelly — Events",
@@ -65,7 +65,7 @@ export default function Events() {
                       target="_blank"
                       rel="noopener"
                     >
-                      RSVP
+                      {isPastEvent(e) ? "Details" : "RSVP"}
                     </a>
                   ) : (
                     <span className="btn btn-ghost btn-sm pill ev-soon">
