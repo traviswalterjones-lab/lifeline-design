@@ -6,6 +6,7 @@ import VideoWall from "@/components/VideoWall";
 import AuthorIntro from "@/components/AuthorIntro";
 import Praise from "@/components/Praise";
 import Events from "@/components/Events";
+import Media from "@/components/Media";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <VideoWall />
         <AuthorIntro />
         <Praise />
+        <Media />
         <FinalCTA />
       </main>
       <Footer />

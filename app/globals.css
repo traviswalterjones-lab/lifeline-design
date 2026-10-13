@@ -1306,6 +1306,60 @@ body.menu-open .fixed-brand {
   }
 }
 
+/* ---- homepage Media section ---- */
+.media-row {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 28px 0;
+  border-top: 1px solid var(--hairline);
+}
+.media-row:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+.media-row > div {
+  min-width: 0; /* let the 1fr track shrink so long titles/desc wrap */
+}
+.media-kind {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.55;
+}
+.media-title {
+  font-size: 21px;
+  font-weight: var(--w-link);
+  letter-spacing: -0.01em;
+}
+.media-desc {
+  font-size: 15px;
+  font-weight: var(--w-light);
+  color: #555;
+  margin-top: 4px;
+}
+.media-cta {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .media-row {
+    grid-template-columns: 1fr auto;
+    gap: 6px 16px;
+  }
+  .media-kind {
+    grid-column: 1 / -1;
+  }
+  .media-cta {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    justify-self: end;
+  }
+}
+
 /* ---- full events page ---- */
 .ev-hero {
   padding-block: 96px 8px;
