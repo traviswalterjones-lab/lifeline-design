@@ -1306,6 +1306,62 @@ body.menu-open .fixed-brand {
   }
 }
 
+/* ---- homepage Reviews section ---- */
+.reviews .sec-head {
+  margin-bottom: 40px;
+}
+.review-feature {
+  max-width: 72%;
+}
+.review-quote {
+  font-size: clamp(24px, 2.9vw, 38px);
+  font-weight: var(--w-mid);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--ink);
+  text-wrap: pretty;
+  margin: 0;
+}
+.review-cite {
+  margin-top: 28px;
+  padding-left: 18px;
+  border-left: 2px solid var(--ink);
+}
+.review-cite .rc-name {
+  display: block;
+  font-size: 17px;
+  font-weight: var(--w-semi);
+  letter-spacing: -0.01em;
+}
+.review-cite .rc-pub {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.55;
+  margin-top: 4px;
+}
+.review-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 15px;
+  font-weight: var(--w-link);
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 3px;
+  transition: border-color 0.15s;
+}
+.review-link:hover {
+  border-color: var(--ink);
+}
+@media (max-width: 760px) {
+  .review-feature {
+    max-width: 100%;
+  }
+}
+
 /* ---- homepage Media section ---- */
 .media-row {
   display: grid;
