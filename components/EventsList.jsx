@@ -59,6 +59,15 @@ export default function EventsList({ events, serverNow }) {
                 >
                   {isPastEvent(e, ref) ? "Details" : "RSVP"}
                 </a>
+              ) : e.link ? (
+                <a
+                  className="btn btn-ghost btn-sm pill"
+                  href={e.link}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Details
+                </a>
               ) : (
                 <span className="btn btn-ghost btn-sm pill ev-soon">
                   Details soon

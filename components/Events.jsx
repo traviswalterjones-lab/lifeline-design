@@ -40,6 +40,15 @@ export default function Events() {
                   >
                     RSVP
                   </a>
+                ) : e.link ? (
+                  <a
+                    className="btn btn-ghost btn-sm rsvp"
+                    href={e.link}
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Details
+                  </a>
                 ) : (
                   <a className="btn btn-ghost btn-sm rsvp" href="/events">
                     Details

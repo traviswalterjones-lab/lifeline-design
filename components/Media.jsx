@@ -17,7 +17,7 @@ export default function Media() {
               <div className="media-kind">{m.kind}</div>
               <div>
                 <div className="media-title">{m.title}</div>
-                <div className="media-desc">{m.desc}</div>
+                {m.desc ? <div className="media-desc">{m.desc}</div> : null}
               </div>
               <a
                 className="btn btn-ghost btn-md media-cta"
