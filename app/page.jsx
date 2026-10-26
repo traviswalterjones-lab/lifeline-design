@@ -20,8 +20,8 @@ export default function Home() {
         <Events />
         <Reviews />
         <LivesLost />
-        <Story />
         <VideoWall />
+        <Story />
         <AuthorIntro />
         <Praise />
         <Media />
