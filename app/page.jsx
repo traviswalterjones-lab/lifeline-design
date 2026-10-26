@@ -17,8 +17,8 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Events />
         <Reviews />
+        <Events />
         <LivesLost />
         <VideoWall />
         <Story />

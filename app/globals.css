@@ -1307,11 +1307,11 @@ body.menu-open .fixed-brand {
 }
 
 /* ---- homepage Reviews section ---- */
-/* tighten the vertical gap between the Events teaser and Reviews */
-.events-teaser {
+/* tighten the vertical gap between the Reviews and Events teaser (adjacent) */
+.reviews {
   padding-bottom: 48px;
 }
-.reviews {
+.events-teaser {
   padding-top: 48px;
 }
 .reviews .eyebrow {
