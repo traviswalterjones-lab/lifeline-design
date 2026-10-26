@@ -14,8 +14,8 @@ export default function Reviews() {
   return (
     <section className="section reviews" id="reviews">
       <div className="wrap">
-        <Reveal as="div" className="sec-head" y={16}>
-          <h2>Reviews</h2>
+        <Reveal as="div" className="eyebrow" y={16}>
+          Reviews
         </Reveal>
 
         <Reveal className="review-feature" selector=".r" stagger={0.12} y={24}>

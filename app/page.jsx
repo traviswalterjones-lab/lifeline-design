@@ -19,8 +19,8 @@ export default function Home() {
         <Hero />
         <Events />
         <Reviews />
-        <Story />
         <LivesLost />
+        <Story />
         <VideoWall />
         <AuthorIntro />
         <Praise />

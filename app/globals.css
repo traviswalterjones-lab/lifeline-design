@@ -1307,8 +1307,16 @@ body.menu-open .fixed-brand {
 }
 
 /* ---- homepage Reviews section ---- */
-.reviews .sec-head {
-  margin-bottom: 40px;
+/* tighten the vertical gap between the Events teaser and Reviews */
+.events-teaser {
+  padding-bottom: 48px;
+}
+.reviews {
+  padding-top: 48px;
+}
+.reviews .eyebrow {
+  margin-bottom: 44px;
+  opacity: 0.6;
 }
 .review-feature {
   max-width: 72%;
